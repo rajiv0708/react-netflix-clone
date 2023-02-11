@@ -13,7 +13,11 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.ORIGIN,
+  })
+);
 app.use(express.json());
 
 connectDB(DATABASE_URL);
