@@ -1,0 +1,15 @@
+export const request = {
+  trending: `/trending/movie/week?api_key=${process.env.REACT_APP_TMBD_API_KEY}&language=en-US`,
+  originals: `/discover/movie?api_key=${process.env.REACT_APP_TMBD_API_KEY}&with_networks=213`,
+  topRated: `/tv/top_rated?api_key=${process.env.REACT_APP_TMBD_API_KEY}&language=en-US`,
+  topRatedTv: `/tv/top_rated?api_key=${process.env.REACT_APP_TMBD_API_KEY}&language=en-US&page=1`,
+  actionMovies: `/discover/movie?api_key=${process.env.REACT_APP_TMBD_API_KEY}&with_genres=28`,
+  comedyMovies: `/discover/movie?api_key=${process.env.REACT_APP_TMBD_API_KEY}&with_genres=35`,
+  romanceMovies: `/discover/movie?api_key=${process.env.REACT_APP_TMBD_API_KEY}&with_genres=10749`,
+  documentaries: `/discover/movie?api_key=${process.env.REACT_APP_TMBD_API_KEY}&with_genres=99`,
+  animation: `/discover/movie?api_key=${process.env.REACT_APP_TMBD_API_KEY}&with_genres=16`,
+  tvOnTheAir: `/tv/on_the_air?api_key=${process.env.REACT_APP_TMBD_API_KEY}&language=en-US&page=1`,
+  new: `/discover/movie?api_key=${process.env.REACT_APP_TMBD_API_KEY}&language=en-US&sort_by=release_date.desc`,
+  comingupMovie: `/movie/upcoming?api_key=${process.env.REACT_APP_TMBD_API_KEY}&language=en-US&page=1`,
+  popularMovie: `/movie/popular?api_key=${process.env.REACT_APP_TMBD_API_KEY}&language=en-US&page=1`,
+};
