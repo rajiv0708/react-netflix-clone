@@ -13,11 +13,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 connectDB(DATABASE_URL);
@@ -27,12 +23,10 @@ app.get("/user", (req, res) => {
 app.use("/user/v1", userRoutes);
 
 // To access static files
-if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "./client/build")));
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
   });
-}
 
 app.listen(port, () => {
   console.log(`Server Started Successfully at Port ${port}`);
