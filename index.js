@@ -23,9 +23,9 @@ app.get("/user", (req, res) => {
 app.use("/user/v1", userRoutes);
 
 // To access static files
- if(process.env.NODE_ENV) {
+ if(process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "./client/build")));
-  app.get("*", (req, res) => {
+    app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
   });
  }
