@@ -23,10 +23,12 @@ app.get("/user", (req, res) => {
 app.use("/user/v1", userRoutes);
 
 // To access static files
-  app.use(express.static(path.join(__dirname, "./client/build")));
+ if(process.env.NODE_ENV) {
+    app.use(express.static(path.join(__dirname, "./client/build")));
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
   });
+ }
 
 app.listen(port, () => {
   console.log(`Server Started Successfully at Port ${port}`);
