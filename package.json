@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
+    "dev": "concurrently \"yarn start\" \"yarn client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
